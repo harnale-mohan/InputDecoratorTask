@@ -1,0 +1,18 @@
+
+<mat-card class="mt-5 bg-info">
+  <mat-card-title-group>
+    <mat-card-title>{{ getTechCards.title }}</mat-card-title>
+    <img mat-card-lg-image [src]="getTechCards.img" alt="{{ getTechCards.title }}">
+  </mat-card-title-group>
+
+  <mat-card-content>
+    {{ getTechCards.content }}
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <div class="actions d-flex justify-content-between ">
+    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="accent">Remove</button>
+  </div>
+</mat-card>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card p-3 m-3">
+                <label for="Add Todo">Add Todo</label>
+                <input #todo type="text">
+
+                <button *ngIf="!isEditMode" (click)="onAdd()" class="btn-block btn-primary mt-4">Add Todo</button>
+                <button *ngIf="isEditMode" (click)="onUpdate()" class="btn-block btn-primary mt-4">Update Todo</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <ul class="list-group m-3">
+                <li *ngFor="let s of todoArr;  trackby : trackById"
+                 class="list-group-item d-flex justify-content-between">                    
+                <strong>{{ s.name }}</strong>
+
+                <div>
+                    <button (click)="onEdit(s)" mat-mini-fab color="primary" class="mr-3"><mat-icon>edit</mat-icon></button>
+                    <button (click)="onRemove(s.id)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+                </div>
+                </li>
+            </ul>
+                
+        </div>
+
+    </div>
+</div>

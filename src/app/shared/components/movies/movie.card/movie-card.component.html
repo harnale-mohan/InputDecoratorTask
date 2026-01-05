@@ -1,0 +1,33 @@
+<!-- <div class="col-md-3"> -->
+    <div class="card movieCard text-white mt-5">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-10">
+                    <h2 class="m-0">{{movies.original_title}}</h2>
+                </div>
+                <div class="col-2">
+                    <h3><span class="badge" [ngClass]="{
+                    'bg-success': movies.vote_average >= 7,
+                    'bg-warning': movies.vote_average >= 5 && movies.vote_average < 7,
+                    'bg-danger': movies.vote_average <= 5
+                  }">{{ movies.vote_average}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <figure>
+                <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path || movies.backdrop_path}}" alt="" title="">
+
+
+                <figcaption>
+                    <strong>{{movies.original_title}}</strong>
+                    <p>{{movies.overview}}</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-sm btn-primary">Edit</button>
+            <button class="btn btn-sm btn-danger">Remove</button>
+        </div>
+    </div>
+<!-- </div> -->

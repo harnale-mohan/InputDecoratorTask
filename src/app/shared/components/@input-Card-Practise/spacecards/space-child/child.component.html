@@ -1,0 +1,17 @@
+<mat-card class="mt-5 bg-warning">
+  <mat-card-title-group>
+    <mat-card-title>{{ spaceCards.title }}</mat-card-title>
+    <img mat-card-lg-image [src]="spaceCards.img" alt="{{ spaceCards.title }}">
+  </mat-card-title-group>
+
+  <mat-card-content>
+    {{ spaceCards.content }}
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <div class="actions d-flex justify-content-between ">
+    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="accent">Remove</button>
+  </div>
+</mat-card>

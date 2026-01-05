@@ -1,0 +1,17 @@
+<mat-card class="mt-5 bg-success">
+  <mat-card-title-group>
+    <mat-card-title>{{ natureCards.title }}</mat-card-title>
+    <img mat-card-lg-image [src]="natureCards.img" alt="{{ natureCards.title }}">
+  </mat-card-title-group>
+
+  <mat-card-content>
+    {{ natureCards.content }}
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <div class="actions d-flex justify-content-between ">
+    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="accent">Remove</button>
+  </div>
+</mat-card>

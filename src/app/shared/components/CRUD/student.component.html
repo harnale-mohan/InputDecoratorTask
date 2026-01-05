@@ -1,0 +1,121 @@
+
+<div class="container">
+    <h2 class="bg-danger m-4 p-4"><strong>1nd STUDENT CRUD USING @ViewChild Decorator</strong></h2>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="form-group m-4">
+                    <label for="fname">fname</label>
+                    <input #fname type="text" class="form-control" required>
+                    <label for="lname">lname</label>
+                    <input #lname type="text" class="form-control" required>
+                    <label for="email">email</label>
+                    <input #email type="text" class="form-control" required>
+                    <label for="contact">contact</label>
+                    <input #contact type="text" class="form-control" required>
+
+                    <button *ngIf="!isInEditMode" (click)="onAdd()" class="btn btn-block btn-primary mt-4">Add Student</button>
+                    <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-block btn-primary mt-4">Update Student</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <table class="table table-bordered table-striped mt-4 text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Fname</th>
+                        <th>Lname</th>
+                        <th>Email</th>
+                        <th>contact</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let s of studentArr; let i= index;  trackBy : trackById">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ s.fname}}</td>
+                        <td>{{ s.lname}}</td>
+                        <td>{{ s.email}}</td>
+                        <td>{{ s.contact}}</td>
+                        <td>
+                            <button (click)="onEdit(s)" mat-raised-button color="primary">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button  (click)="onRemove(s.id)"mat-raised-button color="warn">
+                                Remove
+                            </button>
+                        </td>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+<!-- 2nd CRUD -->
+ <h2 class="bg-danger m-4 p-4"><strong>2nd STUDENT CRUD USING @ViewChild Decorator</strong></h2>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="form-group m-4">
+                    <label for="fname">fname</label>
+                    <input #fname1 type="text" class="form-control" required>
+                    <label for="lname">lname</label>
+                    <input #lname1 type="text" class="form-control" required>
+                    <label for="email">email</label>
+                    <input #email1 type="text" class="form-control" required>
+                    <label for="contact">contact</label>
+                    <input #contact1 type="text" class="form-control" required>
+
+                    <button *ngIf="!inEditMode" (click)="onAdd1()" class="btn btn-block btn-primary mt-4">Add Student</button>
+                    <button *ngIf="inEditMode" (click)="onUpdate1()" class="btn btn-block btn-primary mt-4">Update Student</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <table class="table table-bordered table-striped mt-4 text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Fname</th>
+                        <th>Lname</th>
+                        <th>Email</th>
+                        <th>contact</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let s of studentArr; let i= index;  trackBy : trackById">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ s.fname}}</td>
+                        <td>{{ s.lname}}</td>
+                        <td>{{ s.email}}</td>
+                        <td>{{ s.contact}}</td>
+                        <td>
+                            <button (click)="onEdit1(s)" mat-raised-button color="primary">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button (click)="onDelete(s.id)" mat-raised-button color="warn">
+                                Remove
+                            </button>
+                        </td>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
